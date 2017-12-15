@@ -6,7 +6,7 @@ COPY run.sh /run.sh
 RUN useradd -m notroot
 
 # Allow notroot to run stuff as root (to install dependencies):
-RUN echo "notroot ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/notroot
+#RUN echo "notroot ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/notroot
 
 # Auto-fetch GPG keys (for checking signatures)
 RUN sudo -u notroot mkdir /home/notroot/.gnupg
