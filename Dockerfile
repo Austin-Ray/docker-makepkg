@@ -5,10 +5,6 @@ COPY run.sh /run.sh
 # makepkg cannot (and should not) be run as root:
 RUN useradd -m notroot
 
-# Generally, refreshing without sync'ing is discouraged, but we've a clean
-# environment here.
-#RUN pacman -Sy --noconfirm base-devel
-
 # Allow notroot to run stuff as root (to install dependencies):
 RUN echo "notroot ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/notroot
 
